@@ -55,6 +55,9 @@
                         <li>
                         <a class="nav-link" href="{{ route('user-qrs.index')}}">Qrs users </a>  
                         </li>
+                        <li>
+                        <a class="nav-link" href="{{ route('permissions.index')}}">User permissions </a>  
+                        </li>
 
                         @endguest
                     </ul>

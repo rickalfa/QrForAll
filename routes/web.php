@@ -27,6 +27,9 @@ Route::resource('user-qrs', App\Http\Controllers\UserQrController::class);
 
 Route::resource('libros', App\Http\Controllers\LibroController::class)->middleware('auth');
 Route::resource('categorias', App\Http\Controllers\CategoriaController::class)->middleware('auth');
+Route::resource('permissions', App\Http\Controllers\PermissionController::class)->middleware('auth');
+
+
 
 
 
