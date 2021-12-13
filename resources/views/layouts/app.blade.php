@@ -43,21 +43,11 @@
                          @guest
                        
                          @else
-                        <li>
-                        <a class="nav-link" href="{{ route('categorias.index')}}">Categorias </a>  
-                        </li>
+                   
                         <li>
                         <a class="nav-link" href="{{ route('libros.index')}}">Libros </a>  
                         </li>
-                        <li>
-                        <a class="nav-link" href="{{ route('user-app.index')}}">User app </a>  
-                        </li>
-                        <li>
-                        <a class="nav-link" href="{{ route('user-qrs.index')}}">Qrs users </a>  
-                        </li>
-                        <li>
-                        <a class="nav-link" href="{{ route('permissions.index')}}">User permissions </a>  
-                        </li>
+                    
 
                         @endguest
                     </ul>
@@ -90,7 +80,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="dashboard">dashboard admin</a>
+                                    <a class="dropdown-item" href="user-app">dashboard admin</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -103,9 +93,14 @@
             </div>
         </nav>
 
+       
         <main class="py-4">
             @yield('content')
         </main>
+
+        
+
     </div>
+
 </body>
 </html>

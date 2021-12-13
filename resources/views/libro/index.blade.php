@@ -7,7 +7,9 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
+          @include('layouts.sidebar')
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">

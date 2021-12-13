@@ -22,20 +22,21 @@ class RoleSeeder extends Seeder
       $roleAdmin = Role::create(['name'=>'admin']);
       $roleUserfree =  Role::create(['name'=>'user_free']);
 
-      Permission::create(['name'=> 'libros.index']);
-      Permission::create(['name'=> 'libros.create']);
-      Permission::create(['name'=> 'libros.store']);
-      Permission::create(['name'=> 'libros.destroy']);
-      Permission::create(['name'=> 'libros.edit']);
-      Permission::create(['name'=> 'libros.update']);
+      Permission::create(['name'=> 'libros.index'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'libros.show'])->syncRoles([$roleAdmin, $roleUserfree]);
+      Permission::create(['name'=> 'libros.create'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'libros.store'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'libros.destroy'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'libros.edit'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'libros.update'])->syncRoles([$roleAdmin]);
 
-      Permission::create(['name'=> 'categorias.index']);
-      Permission::create(['name'=> 'categorias.show']);
-      Permission::create(['name'=> 'categorias.create']);
-      Permission::create(['name'=> 'categorias.store']);
-      Permission::create(['name'=> 'categorias.destroy']);
-      Permission::create(['name'=> 'categorias.edit']);
-      Permission::create(['name'=> 'categorias.update']);
+      Permission::create(['name'=> 'categorias.index'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'categorias.show'])->syncRoles([$roleAdmin, $roleUserfree]);
+      Permission::create(['name'=> 'categorias.create'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'categorias.store'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'categorias.destroy'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'categorias.edit'])->syncRoles([$roleAdmin]);
+      Permission::create(['name'=> 'categorias.update'])->syncRoles([$roleAdmin]);
 
     }
 }
