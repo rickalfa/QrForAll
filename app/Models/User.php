@@ -25,6 +25,15 @@ class User extends Authenticatable
         'password',
     ];
 
+
+    static $rules = [
+		'name' => 'required',
+		'email' => 'required',
+    ];
+
+    protected $perPage = 20;
+
+
     
 
     /**

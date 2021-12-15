@@ -24,7 +24,7 @@ class Libros extends Migration
             
             $table->timestamps();
 
-            $table->foreign('categoria_libro')->references('id')->on('categorias')->onDelete("cascade");
+            $table->foreign('categoria_libro')->references('id')->on('categorias')->onDelete("restrict");
             
 
         });
