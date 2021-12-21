@@ -11,6 +11,7 @@
             {{ Form::text('guard_name', $role->guard_name, ['class' => 'form-control' . ($errors->has('guard_name') ? ' is-invalid' : ''), 'placeholder' => 'Guard Name']) }}
             {!! $errors->first('guard_name', '<div class="invalid-feedback">:message</p>') !!}
         </div>
+        
 
     </div>
     <div class="box-footer mt20">

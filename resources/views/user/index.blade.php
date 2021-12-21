@@ -32,43 +32,51 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="myTable" class="table table-striped table-hover" >
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
 										<th>Name</th>
 										<th>Email</th>
+                                        <th>Role user</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $user)
+                                    @for ($i = 0; $i <= 50; $i++)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td>{{ $i+1  }}</td>
                                             
-											<td>{{ $user->name }}</td>
-											<td>{{ $user->email }}</td>
+											<td>{{ $users[$i]->name }}</td>
+											<td>{{ $users[$i]->email }}</td>
+                                            <td>{{ $users[$i]->rol }}</td>
 
                                             <td>
-                                                <form action="{{ route('users.destroy',$user->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('users.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('users.destroy',$users[$i]->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('users.show',$users[$i]->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('users.edit',$users[$i]->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endfor
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                {!! $users->links() !!}
+          
             </div>
         </div>
     </div>
+
+
+                    
+
+
+
 @endsection

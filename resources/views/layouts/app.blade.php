@@ -18,12 +18,19 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+       <!-- Styles Plugin HTML TABLES https://datatables.net/ -->
+       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+
+ 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
      <!-- Styles  PROJECT THEONLYONESTUDIO <link rel="stylesheet" href="{{asset('css/style_main.css') }}">-->
      <link rel="stylesheet" href="{{asset('css/style_main.css') }}">
- 
+
+   
 </head>
 <body>
     <div id="app">
@@ -102,5 +109,18 @@
 
     </div>
 
+  
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+
+        <script>
+        myTable = document.getElementById("myTable");
+        dataTable = new DataTable(myTable); 
+        </script>
+     
 </body>
 </html>

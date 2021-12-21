@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
 /**
@@ -18,10 +19,28 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
+       // $users = User::paginate(); * $users->perPage()
+
+       $users = User::with('roles')->get();
+
+       $countUser = count($users);
+       
+       for ($i=0; $i < $countUser -1; $i++) { 
+        
+        //$users[$i]['rol'] = '';
+
+       //echo $users[$i]->roles[0];
+         
+       $users[$i]['rol'] =  (isset($users[$i]->roles[0]['name']) ? $users[$i]->roles[0]['name'] : "undefined-rol" );
+
+       };
+
+       //var_dump($users);
+
+       //echo $users[5]['rol'];
 
         return view('user.index', compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+           ->with('i', (request()->input('page', 1) - 1) );
     }
 
     /**
@@ -61,6 +80,16 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
+       /// $roleuser = Role::findById(1, 'web');
+
+        $roleuser = $user->getRoleNames();
+
+        $user['role'] = $roleuser;
+
+
+
+        var_dump($user);
+
         return view('user.show', compact('user'));
     }
 
@@ -74,7 +103,13 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('user.edit', compact('user'));
+        $userRole = Role::pluck('name','id');
+
+        //var_dump($userRole);
+
+      
+
+        return view('user.edit', compact('user', 'userRole'));
     }
 
     /**
@@ -90,8 +125,17 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
+        $datesRequest = $request->all();
+        var_dump($datesRequest);
+
+       // echo "rol assign : ". $datesRequest['roluser'];
+
+        $user->assignRole($datesRequest['roluser']);
+ 
+      
+
+     return redirect()->route('users.index')
+           ->with('success', 'User updated successfully');
     }
 
     /**
