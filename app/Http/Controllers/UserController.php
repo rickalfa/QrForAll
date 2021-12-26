@@ -25,7 +25,7 @@ class UserController extends Controller
 
        $countUser = count($users);
        
-       for ($i=0; $i < $countUser -1; $i++) { 
+       for ($i=0; $i < $countUser ; $i++) { 
         
         //$users[$i]['rol'] = '';
 
@@ -39,7 +39,7 @@ class UserController extends Controller
 
        //echo $users[5]['rol'];
 
-        return view('user.index', compact('users'))
+        return view('user.index', compact('users', 'countUser'))
            ->with('i', (request()->input('page', 1) - 1) );
     }
 
@@ -51,7 +51,10 @@ class UserController extends Controller
     public function create()
     {
         $user = new User();
-        return view('user.create', compact('user'));
+        $userRole = Role::pluck('name','id');
+
+
+        return view('user.create', compact('user', 'userRole'));
     }
 
     /**
@@ -145,8 +148,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id)->delete();
+        
 
+        if (auth()->user()->id == $id) {
+            
+            return redirect()->route('users.index')->with('danger', 'you Cant delete you self ');
+
+        }
+
+        $user = User::find($id)->delete();
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');
     }

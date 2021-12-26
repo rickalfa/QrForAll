@@ -29,6 +29,16 @@
                             {{ $role->guard_name }}
                         </div>
 
+                        <div class="form-group">
+                            <strong>Permissions : </strong>
+                            @foreach($rolesPermissions as $rolename)
+                            -
+                            {{ $rolename->name}}
+
+                            @endforeach
+                        </div>
+
+
                     </div>
                 </div>
             </div>

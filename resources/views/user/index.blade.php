@@ -30,6 +30,12 @@
                         </div>
                     @endif
 
+                    @if ($message = Session::get('danger'))
+                        <div class="alert alert-danger">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="myTable" class="table table-striped table-hover" >
@@ -45,7 +51,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i <= 50; $i++)
+                                    @for ($i = 0; $i <$countUser; $i++)
                                         <tr>
                                             <td>{{ $i+1  }}</td>
                                             

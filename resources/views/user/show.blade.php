@@ -21,15 +21,15 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Name:</strong>
+                            <strong>Name : </strong>
                             {{ $user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Email:</strong>
+                            <strong>Email : </strong>
                             {{ $user->email }}
                         </div>
                         <div class="form-group">
-                            <strong>id:</strong>
+                            <strong>Role : </strong>
                             {{ $user->role}}
                         </div>
 

@@ -21,6 +21,9 @@
        <!-- Styles Plugin HTML TABLES https://datatables.net/ -->
        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
+       
+       <link href="sidebars.css" rel="stylesheet">
+
 
  
 

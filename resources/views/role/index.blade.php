@@ -39,6 +39,7 @@
                                         
 										<th>Name</th>
 										<th>Guard Name</th>
+                                        <th>Permissions</th>
 
                                         <th></th>
                                     </tr>
@@ -50,6 +51,18 @@
                                             
 											<td>{{ $role->name }}</td>
 											<td>{{ $role->guard_name }}</td>
+
+                                            <td>
+                                            @forelse($role->permissions as $items)
+
+                                              <span class="badge badge-info">{{$items->name}} </span>
+
+                                            @empty
+
+                                               <span class="badge badge-danger">No permissions added </span>
+
+                                            @endforelse
+                                            </td>
 
                                             <td>
                                                 <form action="{{ route('roles.destroy',$role->id) }}" method="POST">
