@@ -52,6 +52,7 @@
 											<td>{{ $categoria->nombre_categoria }}</td>
 
                                             <td>
+                                                @can('categorias.destroy')
                                                 <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -59,6 +60,15 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
+                                                @endcan
+
+                                                @can('categorias.update')
+
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+
+                                                @endcan
+
                                             </td>
                                         </tr>
                                     @endforeach

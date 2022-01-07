@@ -23,7 +23,16 @@ class UserAppSedeer extends Seeder
                           'password'=> bcrypt('betancourt77')]
         );
 
-        $user->assignRole('admin');          
+
+        $user2 = User::factory()->create(['name'=> 'pilar',
+        'email'=> 'paranrey1@outlook.es',
+         'password'=> bcrypt('betancourt77')]
+);
+
+        $user->assignRole('admin_level3');     
+
+        $user2->assignRole('admin_level2');
+
         
         User::factory(99)->create();
 

@@ -28,7 +28,7 @@ class UserQr extends Migration
 
            $table->timestamps();
 
-           $table->foreign('owner_user_id')->references('id')->on('user_app')->onDelete("cascade");
+           $table->foreign('owner_user_id')->references('id')->on('users')->onDelete("cascade");
 
            
      

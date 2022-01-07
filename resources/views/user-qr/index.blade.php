@@ -18,9 +18,12 @@
                             </span>
 
                              <div class="float-right">
+                                 @can('user-qrs.create')
                                 <a href="{{ route('user-qrs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
+                                 @endcan
+
                               </div>
                         </div>
                     </div>
@@ -60,6 +63,7 @@
 											<td>{{ $userQr->date_create }}</td>
 
                                             <td>
+                                                @can('user-qrs.destroy')
                                                 <form action="{{ route('user-qrs.destroy',$userQr->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('user-qrs.show',$userQr->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('user-qrs.edit',$userQr->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -67,6 +71,15 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
+                                                @endcan
+
+                                                @can('user-qrs.update')
+
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('user-qrs.show',$userQr->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('user-qrs.edit',$userQr->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+
+                                                @endcan
+
                                             </td>
                                         </tr>
                                     @endforeach

@@ -133,6 +133,12 @@ class UserController extends Controller
 
        // echo "rol assign : ". $datesRequest['roluser'];
 
+        $currentRole = $user->getRoleNames();
+
+        var_dump($currentRole[0]);
+
+        $user->removeRole($currentRole[0]);
+
         $user->assignRole($datesRequest['roluser']);
  
       

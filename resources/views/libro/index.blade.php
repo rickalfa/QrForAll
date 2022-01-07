@@ -55,6 +55,7 @@
 											<td>{{ $libro->categoria->nombre_categoria }}</td>
 
                                             <td>
+                                                @role('admin_level3')
                                                 <form action="{{ route('libros.destroy',$libro->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('libros.show',$libro->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('libros.edit',$libro->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
@@ -62,6 +63,15 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
+                                                @endrole
+
+                                                @role('admin_level2')
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('libros.show',$libro->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('libros.edit',$libro->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                            
+                                                @endrole
+
+
                                             </td>
                                         </tr>
                                     @endforeach

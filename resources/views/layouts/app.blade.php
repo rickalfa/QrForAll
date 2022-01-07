@@ -90,7 +90,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('user-app.index') }}">dashboard admin</a>
+                                    <a class="dropdown-item" href="{{ route('libros.index') }}">dashboard admin</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
