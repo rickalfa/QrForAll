@@ -33,6 +33,11 @@
                             {{ $user->role}}
                         </div>
 
+                        <div class="form-group">
+                            <strong>Service - contract : </strong>
+                            {{ $user->userServiceContract }}
+                        </div>
+
                     </div>
                 </div>
             </div>

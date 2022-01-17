@@ -133,15 +133,28 @@ class UserController extends Controller
 
        // echo "rol assign : ". $datesRequest['roluser'];
 
-        $currentRole = $user->getRoleNames();
+        $currentRoleuser = $user->getRoleNames();
 
-        var_dump($currentRole[0]);
+        /**
+         * Comprobamos si el usuario tiene algun role asignado
+         */
+        $currentRole = isset($currentRoleuser) ? false  : $user->getRoleNames();
 
-        $user->removeRole($currentRole[0]);
+        if ($currentRole) {
+            var_dump($currentRole[0]);
 
-        $user->assignRole($datesRequest['roluser']);
- 
-      
+            $user->removeRole($currentRole[0]);
+    
+            $user->assignRole($datesRequest['roluser']);
+     
+
+
+        }else{
+
+            $user->assignRole($datesRequest['roluser']);
+
+        }
+
 
      return redirect()->route('users.index')
            ->with('success', 'User updated successfully');

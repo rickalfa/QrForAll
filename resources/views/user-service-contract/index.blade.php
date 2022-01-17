@@ -1,29 +1,25 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Categoria
+    User Service Contract
 @endsection
 
 @section('content')
     <div class="container-fluid">
         <div class="row">
-           @include('layouts.sidebar')
-            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Categoria') }}
+                                {{ __('User Service Contract') }}
                             </span>
 
                              <div class="float-right">
-
-                             @can('categorias.create')
-                                <a href="{{ route('categorias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('user-service-contracts.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
-                                @endcan
                               </div>
                         </div>
                     </div>
@@ -40,39 +36,34 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Categoria</th>
-										<th>Nonmbre Categoria</th>
+										<th>Name Service</th>
+										<th>User Id</th>
+										<th>Start Service Contract</th>
+										<th>Expire Service Contract</th>
+										<th>Description</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($categorias as $categoria)
+                                    @foreach ($userServiceContracts as $userServiceContract)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $categoria->id }}</td>
-											<td>{{ $categoria->nombre_categoria }}</td>
+											<td>{{ $userServiceContract->name_service }}</td>
+											<td>{{ $userServiceContract->user_id }}</td>
+											<td>{{ $userServiceContract->start_service_contract }}</td>
+											<td>{{ $userServiceContract->expire_service_contract }}</td>
+											<td>{{ $userServiceContract->description }}</td>
 
                                             <td>
-                                                @can('categorias.destroy')
-                                                <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
-                                                 @endcan   
-                                                
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                     @can('categorias.update')
-                                                    <a class="btn btn-sm btn-success" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                     @endcan
+                                                <form action="{{ route('user-service-contracts.destroy',$userServiceContract->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('user-service-contracts.show',$userServiceContract->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('user-service-contracts.edit',$userServiceContract->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
-
-                                                @can('categorias.destroy')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
-                                                @endcan
-
-   
-
                                             </td>
                                         </tr>
                                     @endforeach
@@ -81,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $categorias->links() !!}
+                {!! $userServiceContracts->links() !!}
             </div>
         </div>
     </div>

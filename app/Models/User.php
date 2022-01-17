@@ -54,4 +54,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function userServiceContract()
+    {
+        return $this->hasMany('App\UserServiceContract');
+
+
+    }
 }
