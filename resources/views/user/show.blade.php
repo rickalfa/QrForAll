@@ -38,6 +38,20 @@
                             {{ $user->userServiceContract }}
                         </div>
 
+                        <div class="form-group">
+                            <strong> Payments : </strong>
+                          
+                            <p>
+                            @foreach( $user->payments as $payment)
+
+                           {{$payment}} </br>
+                            
+                            @endforeach
+                            </p>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
