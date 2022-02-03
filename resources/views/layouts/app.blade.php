@@ -23,19 +23,18 @@
 
        
        <link href="sidebars.css" rel="stylesheet">
-
-
  
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-     <!-- Styles  PROJECT THEONLYONESTUDIO <link rel="stylesheet" href="{{asset('css/style_main.css') }}">-->
-     <link rel="stylesheet" href="{{asset('css/style_main.css') }}">
+      <!-- Styles  PROJECT THEONLYONESTUDIO <link rel="stylesheet" href="{{asset('css/style_main.css') }}">-->
+   <link rel="stylesheet" href="{{asset('css/style_main.css') }}">
+
+   
 
    
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -102,6 +101,8 @@
                 </div>
             </div>
         </nav>
+
+
 
        
         <main class="py-4">

@@ -32,8 +32,7 @@ class Pay extends Migration
              * restriccion de llave foreana el campo debe de contener un id existente en la tabla users
              */
 
-            $table->foreign('id_user_payments')->references('id')->on('user_payments')
-            ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_user_payments')->references('id')->on('user_payments')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
 

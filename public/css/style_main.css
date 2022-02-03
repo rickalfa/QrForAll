@@ -8,8 +8,22 @@
 html {
 
     scroll-behavior: smooth;
+  
+}
+
+h3, .h3 {
+
+    color:#D9DBE1;
 
 }
+
+li {
+    color: white;
+}
+
+.bg-dark {
+    background-color: #262626 !important;
+  }
 
 .jumbotron-image {
     background-position: center center;

@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
+});
+
+Route::get('payment', function(){
+
+  return view('payment.index');
+
 });
 
 Auth::routes();
@@ -22,6 +28,7 @@ Auth::routes();
 /**
  * Rutas de acceso para los administradores
  */
+
   Route::group(['middleware' => ['role:admin_level3|admin_level2']], function()
   {
 
