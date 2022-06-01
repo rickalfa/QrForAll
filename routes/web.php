@@ -17,9 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('payment', function(){
 
-  return view('payment.index');
+Route::get('welcome', function () {
+  return view('welcome');
+});
+
+Route::get('about', function(){
+
+  return view('scmod.index');
 
 });
 
