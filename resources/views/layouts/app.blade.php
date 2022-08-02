@@ -35,14 +35,16 @@
 
    
 </head>
-<body class="bg-dark">
+
+
+<body style="height:2500px" class="bg-dark" >
     <div id="app">
 
 
 
           <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
            <div class="container-fluid">
-            <a class="navbar-brand" href="#">SC brood-war Mod heroes silence </a>
+            <a class="navbar-brand" href="#">SC brood-war  </a>
       
             <div class="d-flex justify-content-center">
                    <div class="p-1 ">                  

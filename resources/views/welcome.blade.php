@@ -20,11 +20,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
        <!-- Styles Plugin HTML TABLES https://datatables.net/ -->
-       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
        
        
- 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -72,19 +71,23 @@ video {
 </head>
 
 
-<body class="bg-dark">
+<body class="bg-dark" >
  <div id="app">
      <div class="container-fluid">
         <video autoplay="autoplay" muted="muted" loop="loop"  >
            <source src="img/Test-sc-2.mp4" type="video/mp4"> 
         </video>
-   
-        <nav class="navbar navbar-expand-sm navbar-dark fixed-bottom">
+    <div style="height: 80vh"></div>
+
+
+    
+      </div>  
+ </div>
+ <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
            <div class="container-fluid">
             <a class="navbar-brand" href="#">SC brood-war Mod heroes silence </a>
 
-      
-                  
+                 
                 <div class="d-flex justify-content-center mb-3">
                  
                    <div class="p-1 ">                  
@@ -143,17 +146,25 @@ video {
       
              </ul>
           </div>
-        </nav>
-    
-      </div>  
- </div>
+     </nav>
 
-  
+ 
+   <br></br>
+ <br></br>
+ @extends('scmod.index')
+
+ <div class="container-fluid"><br>
+  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-       <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
 
         <script>

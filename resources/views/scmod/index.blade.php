@@ -1,11 +1,11 @@
-@extends('layouts.app')
+
 
 @section('template_title')
     {{ $categoria->name ?? 'Show Categoria' }}
 @endsection
 
 
-@section('content')
+
 <div class="container d-flex align-items-center justify-content-center">
 
    <div class="row">
@@ -82,4 +82,3 @@
  
    </div>
 </div>
-@endsection
